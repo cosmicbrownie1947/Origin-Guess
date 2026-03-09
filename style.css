@@ -1,4 +1,3 @@
-}
 {
 margin:0;
 padding:0;
@@ -7,8 +6,8 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#8FA396;
-color:white;
+background:white;
+color:#333;
 height:100vh;
 display:flex;
 justify-content:center;
@@ -28,8 +27,9 @@ gap:20px;
 / LOGO /
 
 .logo{
-width:220px;
+width:150px;
 border-radius:20px;
+border:4px solid #E65F5C;
 margin-bottom:10px;
 }
 
@@ -50,25 +50,24 @@ margin-bottom:30px;
 .menu{
 display:flex;
 flex-direction:column;
-gap:15px;
-width:250px;
+gap:18px;
+width:260px;
 }
 
 .menu a{
 text-decoration:none;
-background:white;
-color:#333;
-padding:15px;
+background:#8FA396;
+color:white;
+padding:18px;
 border-radius:10px;
 font-weight:bold;
-font-size:16px;
+font-size:18px;
 transition:0.25s;
 box-shadow:0px 4px 10px rgba(0,0,0,0.15);
 }
 
 .menu a:hover{
-background:#E65F5C;
-color:white;
+background:#7a8f82;
 transform:translateY(-2px);
 }
 
@@ -77,7 +76,7 @@ transform:translateY(-2px);
 @media (max-width:768px){
 
 .logo{
-width:180px;
+width:120px;
 }
 
 h1{
@@ -85,5 +84,7 @@ font-size:36px;
 }
 
 .menu{
-width:200px;
+width:220px;
+}
+
 }
