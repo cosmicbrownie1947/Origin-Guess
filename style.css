@@ -1,0 +1,89 @@
+}
+{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#8FA396;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/ MAIN CONTAINER /
+
+.game-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+/ LOGO /
+
+.logo{
+width:220px;
+border-radius:20px;
+margin-bottom:10px;
+}
+
+/ TITLE /
+
+h1{
+font-size:48px;
+margin-bottom:5px;
+}
+
+.subtitle{
+font-size:18px;
+margin-bottom:30px;
+}
+
+/ BUTTON MENU /
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:15px;
+width:250px;
+}
+
+.menu a{
+text-decoration:none;
+background:white;
+color:#333;
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+font-size:16px;
+transition:0.25s;
+box-shadow:0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu a:hover{
+background:#E65F5C;
+color:white;
+transform:translateY(-2px);
+}
+
+/ MOBILE */
+
+@media (max-width:768px){
+
+.logo{
+width:180px;
+}
+
+h1{
+font-size:36px;
+}
+
+.menu{
+width:200px;
+}
