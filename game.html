@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Play | Origin Guess!</title>
+
+<link rel="stylesheet" href="game.css">
+
+</head>
+
+<body>
+
+<div class="game-container">
+
+<h1>Origin Guess!</h1>
+<p class="round">Round <span id="round">1</span> / 10</p>
+
+<div class="image-box">
+<img id="game-image" src="" alt="Guess Image">
+</div>
+
+<div class="guess-buttons">
+<button onclick="guess('ai')">AI Generated</button>
+<button onclick="guess('real')">Real Image</button>
+</div>
+
+<div id="feedback" class="feedback hidden">
+<p id="feedback-text"></p>
+<button onclick="nextRound()">Next</button>
+</div>
+
+</div>
+
+<footer>
+
+<p>Origin Guess, 2026</p>
+
+<p class="source-link">
+Want to know where we got these images? 
+<a href="about.html">Click here</a>
+</p>
+
+</footer>
+
+<script src="game.js"></script>
+
+</body>
+
+</html>
