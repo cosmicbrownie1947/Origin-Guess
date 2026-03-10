@@ -1,116 +1,95 @@
-{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, Helvetica, sans-serif;
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+/* Body */
 
 body{
-background:white;
-color:#333;
-min-height:100vh;
-display:flex;
-flex-direction:column;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+    color:#222;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
-/ MAIN PAGE AREA /
+/* Main container */
 
-main{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:80px 20px 120px 20px;
+.container{
+    flex:1;
+    text-align:center;
+    padding:60px 20px;
 }
 
-/ GAME CONTAINER /
+/* Logo box */
 
-.game-container{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:20px;
-max-width:400px;
+.logo-box{
+    display:inline-block;
+    border:4px solid #222;
+    padding:20px;
+    border-radius:12px;
+    background:white;
 }
 
-/ LOGO /
-
-.logo{
-width:140px;
-border-radius:20px;
-border:4px solid #E65F5C;
-margin-bottom:10px;
+.logo-box img{
+    max-width:320px;
+    width:100%;
 }
 
-/ TITLE /
+/* Tagline */
 
-h1{
-font-size:48px;
-color:#333;
+.tagline{
+    margin-top:25px;
+    font-size:20px;
+    color:#555;
 }
 
-.subtitle{
-font-size:18px;
-margin-bottom:35px;
-color:#555;
+/* Buttons container */
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
 }
 
-/ BUTTON MENU /
+/* Button style */
 
-.menu{
-display:flex;
-flex-direction:column;
-gap:20px;
-width:280px;
+.btn{
+    text-decoration:none;
+    background:#7f9a8a;
+    color:white;
+    padding:12px 28px;
+    border-radius:8px;
+    font-size:16px;
+    width:220px;
+    transition:0.2s;
 }
 
-/ BUTTON STYLE /
-
-.menu a{
-text-decoration:none;
-background:#8FA396;
-color:white;
-padding:18px;
-border-radius:10px;
-font-weight:bold;
-font-size:18px;
-text-align:center;
-transition:0.25s;
-box-shadow:0px 4px 10px rgba(0,0,0,0.15);
+.btn:hover{
+    opacity:0.85;
 }
 
-/ BUTTON HOVER /
+/* Play button larger */
 
-.menu a:hover{
-background:#7a8f82;
-transform:translateY(-2px);
+.play{
+    font-size:20px;
+    padding:16px 36px;
+    width:260px;
+    background:#ff5a5a;
 }
 
-/ FOOTER /
+/* Footer */
 
 footer{
-text-align:center;
-padding:25px;
-font-size:14px;
-color:#666;
-border-top:1px solid #eee;
-}
-
-/ MOBILE */
-
-@media (max-width:768px){
-
-.logo{
-width:110px;
-}
-
-h1{
-font-size:36px;
-}
-
-.menu{
-width:230px;
-}
-
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    font-size:14px;
 }
