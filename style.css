@@ -8,26 +8,36 @@ font-family: Arial, Helvetica, sans-serif;
 body{
 background:white;
 color:#333;
-height:100vh;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/ MAIN PAGE AREA /
+
+main{
+flex:1;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
+padding:80px 20px 120px 20px;
 }
 
-/ MAIN CONTAINER /
+/ GAME CONTAINER /
 
 .game-container{
 display:flex;
 flex-direction:column;
 align-items:center;
+text-align:center;
 gap:20px;
+max-width:400px;
 }
 
 / LOGO /
 
 .logo{
-width:150px;
+width:140px;
 border-radius:20px;
 border:4px solid #E65F5C;
 margin-bottom:10px;
@@ -37,12 +47,13 @@ margin-bottom:10px;
 
 h1{
 font-size:48px;
-margin-bottom:5px;
+color:#333;
 }
 
 .subtitle{
 font-size:18px;
-margin-bottom:30px;
+margin-bottom:35px;
+color:#555;
 }
 
 / BUTTON MENU /
@@ -50,9 +61,11 @@ margin-bottom:30px;
 .menu{
 display:flex;
 flex-direction:column;
-gap:18px;
-width:260px;
+gap:20px;
+width:280px;
 }
+
+/ BUTTON STYLE /
 
 .menu a{
 text-decoration:none;
@@ -62,13 +75,26 @@ padding:18px;
 border-radius:10px;
 font-weight:bold;
 font-size:18px;
+text-align:center;
 transition:0.25s;
 box-shadow:0px 4px 10px rgba(0,0,0,0.15);
 }
 
+/ BUTTON HOVER /
+
 .menu a:hover{
 background:#7a8f82;
 transform:translateY(-2px);
+}
+
+/ FOOTER /
+
+footer{
+text-align:center;
+padding:25px;
+font-size:14px;
+color:#666;
+border-top:1px solid #eee;
 }
 
 / MOBILE */
@@ -76,7 +102,7 @@ transform:translateY(-2px);
 @media (max-width:768px){
 
 .logo{
-width:120px;
+width:110px;
 }
 
 h1{
@@ -84,7 +110,7 @@ font-size:36px;
 }
 
 .menu{
-width:220px;
+width:230px;
 }
 
 }
