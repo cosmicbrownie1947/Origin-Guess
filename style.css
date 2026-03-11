@@ -40,6 +40,14 @@ body{
     width:100%;
 }
 
+.divider{
+width:200px;
+height:2px;
+background:#222;
+margin:20px auto 30px auto;
+border-radius:2px;
+}
+
 /* Tagline */
 
 .tagline{
