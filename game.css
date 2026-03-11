@@ -38,6 +38,7 @@ max-width:420px;
 width:100%;
 border:4px solid #222;
 border-radius:10px;
+transition:0.3s;
 }
 
 .guess-buttons{
