@@ -105,8 +105,22 @@ function showResults(){
 
 document.querySelector(".game-container").innerHTML = `
 <h1>Game Complete!</h1>
-<p>You scored ${score} out of 10.</p>
-<a href="game.html"><button style="margin-top:20px;padding:12px 24px;">Play Again</button></a>
+
+<p>You scored <strong>${score} / 10</strong></p>
+
+<p style="margin-top:15px;">
+Are you better than the average player?
+</p>
+
+<a href="leaderboard.html">
+<button style="margin-top:15px;padding:12px 24px;">View Leaderboard</button>
+</a>
+
+<br><br>
+
+<a href="game.html">
+<button style="padding:12px 24px;">Play Again</button>
+</a>
 `;
 
 }
