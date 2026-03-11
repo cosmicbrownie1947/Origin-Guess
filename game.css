@@ -79,6 +79,21 @@ color:white;
 border-radius:6px;
 cursor:pointer;
 }
+.progress-bar{
+width:300px;
+height:12px;
+background:#ddd;
+margin:15px auto 25px auto;
+border-radius:10px;
+overflow:hidden;
+}
+
+#progress-fill{
+height:100%;
+width:0%;
+background:#ff5a5a;
+transition:0.3s;
+}
 
 .hidden{
 display:none;
