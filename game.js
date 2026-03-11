@@ -51,16 +51,33 @@ function guess(choice){
 
 const feedbackBox = document.getElementById("feedback");
 const feedbackText = document.getElementById("feedback-text");
+const imageBox = document.getElementById("game-image");
+
+const buttons = document.querySelectorAll(".guess-buttons button");
+
+buttons.forEach(button => button.disabled = true);
 
 if(choice === currentImage.type){
 
 score++;
 
-feedbackText.textContent = "Correct! Nice eye.";
+imageBox.style.border = "4px solid #3cb371";
+
+feedbackText.innerHTML = `
+✅ <strong>Correct!</strong> Nice eye.
+`;
 
 }else{
 
-feedbackText.textContent = "Incorrect. " + currentImage.explanation;
+imageBox.style.border = "4px solid #ff4d4d";
+
+let correctAnswer = currentImage.type === "ai" ? "AI Generated" : "Real Image";
+
+feedbackText.innerHTML = `
+❌ <strong>Incorrect</strong><br><br>
+Correct answer: <strong>${correctAnswer}</strong><br><br>
+${currentImage.explanation}
+`;
 
 }
 
