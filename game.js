@@ -101,6 +101,15 @@ loadRound();
 
 }
 
+function updateProgressBar(){
+
+let progress = ((currentRound) / 10) * 100;
+
+document.getElementById("progress-fill").style.width = progress + "%";
+
+}
+
+
 function showResults(){
 
 document.querySelector(".game-container").innerHTML = `
