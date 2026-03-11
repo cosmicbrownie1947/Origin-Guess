@@ -88,6 +88,24 @@ margin:15px auto 25px auto;
 border-radius:10px;
 overflow:hidden;
 }
+.game-header{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+padding:20px;
+background:white;
+border-bottom:2px solid #ddd;
+}
+
+.home-btn{
+width:40px;
+cursor:pointer;
+}
+
+.header-logo{
+width:140px;
+}
 
 #progress-fill{
 height:100%;
