@@ -13,9 +13,9 @@ explanation:"The good giveaway is the lighting and the plants. None of the blurr
 },
 
 {
-src:"images/PLACEHOLDER.jpg",
+src:"images/purple-flower-real.jpg",
 type:"ai",
-explanation:"PLACEHOLDER."
+explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness like AI includes."
 },
 
 {
