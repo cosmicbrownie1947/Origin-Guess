@@ -1,13 +1,13 @@
 const images = [
 
 {
-src:"images/ai/apple-bowl-ai.jpg",
+src:"imagesPLACEHOLDER.jpg",
 type:"ai",
 explanation:"Most apples don’t always come in the exact same shape! These apples don’t have any defects that add life to them."
 },
 
 {
-src:"images/PLACEHOLDER.jpg",
+src:"images/ai/butterfly-wild-real.jpg",
 type:"real",
 explanation:"PLACEHOLDER."
 },
