@@ -13,7 +13,7 @@ explanation:"PLACEHOLDER."
 },
 
 {
-src:"images/astronaut-water-ai.jpg",
+src:"images/ai/astronaut-water-ai.jpg",
 type:"ai",
 explanation:"Astronauts can’t walk on water!."
 },
