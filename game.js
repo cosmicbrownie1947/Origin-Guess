@@ -1,21 +1,21 @@
 const images = [
 
 {
-src:"images/image1.jpg",
+src:"images/ai/apple-bpwl-ai.jpg",
 type:"ai",
-explanation:"This image is AI generated. Look closely at the inconsistent textures and unnatural lighting."
+explanation:"Most apples don’t always come in the exact same shape! These apples don’t have any defects that add life to them."
 },
 
 {
-src:"images/image2.jpg",
+src:"images/PLACEHOLDER.jpg",
 type:"real",
-explanation:"This is a real photograph taken by a human photographer."
+explanation:"PLACEHOLDER."
 },
 
 {
-src:"images/image3.jpg",
+src:"images/astronaut-water-ai.jpg",
 type:"ai",
-explanation:"AI images often have small distortions or overly smooth textures."
+explanation:"Astronauts can’t walk on water!."
 },
 
 {
