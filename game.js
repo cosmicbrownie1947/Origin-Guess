@@ -1,25 +1,25 @@
 const images = [
 
 {
-src:"images/ai/one-parrot-real.jpg",
+src:"ai/one-parrot-real.jpg",
 type:"real",
 explanation:"The texture on the birds here is authentic and asymmetrical. The lighting also matches the background."
 },
 
 {
-src:"images/ai/butterfly-wild-real.jpg",
+src:"ai/butterfly-wild-real.jpg",
 type:"real",
 explanation:"The good giveaway is the lighting and the plants. None of the blurry plants in the back lose any of their shape or parts."
 },
 
 {
-src:"images/ai/purple-flower-real.jpg",
+src:"ai/purple-flower-real.jpg",
 type:"real",
 explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness like AI includes."
 },
 
 {
-src:"images/ai/curvy-road-real.jpg",
+src:"ai/curvy-road-real.jpg",
 type:"real",
 explanation:"A good giveaway is the lighting. The fog has created this dullness in lighting that the camera was able to capture.."
 }
