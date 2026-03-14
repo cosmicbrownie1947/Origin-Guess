@@ -1,27 +1,27 @@
 const images = [
 
 {
-src:"imagesPLACEHOLDER.jpg",
+src:"images/PLACEHOLDER.jpg",
 type:"ai",
-explanation:"Most apples don’t always come in the exact same shape! These apples don’t have any defects that add life to them."
+explanation:"PLACEHOLDER."
 },
 
 {
 src:"images/ai/butterfly-wild-real.jpg",
 type:"real",
+explanation:"The good giveaway is the lighting and the plants. None of the blurry plants in the back lose any of their shape or parts."
+},
+
+{
+src:"images/PLACEHOLDER.jpg",
+type:"ai",
 explanation:"PLACEHOLDER."
 },
 
 {
-src:"images/ai/astronaut-water-ai.jpg",
-type:"ai",
-explanation:"Astronauts can’t walk on water!."
-},
-
-{
-src:"images/image4.jpg",
+src:"images/curvy-road-real.jpg",
 type:"real",
-explanation:"Real photos usually have natural imperfections and consistent lighting."
+explanation:"A good giveaway is the lighting. The fog has created this dullness in lighting that the camera was able to capture.."
 }
 
 ];
