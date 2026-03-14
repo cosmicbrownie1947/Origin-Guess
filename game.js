@@ -1,9 +1,9 @@
 const images = [
 
 {
-src:"images/PLACEHOLDER.jpg",
+src:"images/one-parrot-real.jpg",
 type:"ai",
-explanation:"PLACEHOLDER."
+explanation:"The texture on the birds here is authentic and asymmetrical. The lighting also matches the background."
 },
 
 {
