@@ -1,7 +1,7 @@
 const images = [
 
 {
-src:"images/ai/apple-bpwl-ai.jpg",
+src:"images/ai/apple-bowl-ai.jpg",
 type:"ai",
 explanation:"Most apples don’t always come in the exact same shape! These apples don’t have any defects that add life to them."
 },
