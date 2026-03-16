@@ -51,6 +51,29 @@
 
 </div>
 
+<script>
+
+const playBtn = document.getElementById("play-btn");
+const buttons = document.querySelector(".buttons");
+const difficultyMenu = document.getElementById("difficulty-menu");
+
+playBtn.addEventListener("click", () => {
+
+buttons.classList.add("fade-out");
+
+setTimeout(() => {
+
+buttons.style.display = "none";
+
+difficultyMenu.classList.remove("hidden");
+difficultyMenu.classList.add("fade-in");
+
+}, 400);
+
+});
+
+</script>
+
 </div>
 
 <footer>
