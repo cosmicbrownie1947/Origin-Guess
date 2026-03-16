@@ -8,28 +8,10 @@ const difficulty = params.get("difficulty") || "easy";
 const realImages = [
 
 {
-src:"ai/one-parrot-real.jpg",
+src:"real/placeholder.jpg",
 type:"real",
-explanation:"The texture on the birds here is authentic and asymmetrical. The lighting also matches the background."
+explanation:"placeholder"
 },
-
-{
-src:"ai/butterfly-wild-real.jpg",
-type:"real",
-explanation:"The good giveaway is the lighting and the plants. None of the blurry plants in the back lose any of their shape or parts."
-},
-
-{
-src:"ai/purple-flower-real.jpg",
-type:"real",
-explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness like AI includes."
-},
-
-{
-src:"ai/curvy-road-real.jpg",
-type:"real",
-explanation:"A good giveaway is the lighting. The fog has created this dullness in lighting that the camera was able to capture."
-}
 
 ];
 
@@ -37,15 +19,42 @@ explanation:"A good giveaway is the lighting. The fog has created this dullness 
 // AI IMAGES BY DIFFICULTY
 
 const easyAI = [
+{
+src:"ai/apple-bowl-ai.jpg",
+type:"ai",
+explanation:"Most apples don’t always come in the same shape! These apples don’t have any defects that add life to them."
+},
+  
+{
+src:"ai/astronaut-water-ai.jpg",
+type:"ai",
+explanation:"Astronauts can’t walk on water!"
+},
 
+{
+src:"ai/placeholder.jpg",
+type:"ai",
+explanation:"placeholder"
+}
+  
 ];
 
 const mediumAI = [
-
+{
+src:"ai/blossom-temple-ai.jpg",
+type:"ai",
+explanation:"The flower petals at the bottom of the screen seem big compared to the size of the temple in the background. The colors are very saturated as well."
+},
+  
 ];
 
 const hardAI = [
-
+{
+src:"placeholder.jpg",
+type:"ai",
+explanation:"placeholder"
+},
+  
 ];
 
 
