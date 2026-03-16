@@ -1,3 +1,5 @@
+const params = new URLSearchParams(window.location.search);
+const difficulty = params.get("difficulty") || "easy";
 const images = [
 
 {
