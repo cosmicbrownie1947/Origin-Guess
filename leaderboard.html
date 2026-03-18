@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leaderboard | Origin Guess!</title>
+
+<link rel="stylesheet" href="game.css">
+
+</head>
+
+<body onload="loadLeaderboard()">
+
+<header class="game-header">
+
+<a href="index.html">
+<img src="home.png" class="home-btn" alt="Home">
+</a>
+
+<img src="LOGO.jpg" class="header-logo" alt="Origin Guess">
+
+</header>
+
+<div class="game-container">
+
+<h1>Leaderboard</h1>
+
+<div id="leaderboard"></div>
+
+</div>
+
+<footer>
+
+<p>Origin Guess, 2026</p>
+
+</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  getDocs, 
+  query, 
+  orderBy, 
+  limit
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "PASTE YOUR KEY",
+  authDomain: "PASTE YOUR DOMAIN",
+  projectId: "PASTE YOUR PROJECT ID",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+// 📊 LOAD LEADERBOARD
+async function loadLeaderboard() {
+  const q = query(collection(db, "leaderboard"), orderBy("score", "desc"), limit(25));
+  const querySnapshot = await getDocs(q);
+
+  const leaderboardDiv = document.getElementById("leaderboard");
+  leaderboardDiv.innerHTML = "";
+
+  let rank = 1;
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+
+    leaderboardDiv.innerHTML += `
+      <p>#${rank} — ${data.playerId}: ${data.score}</p>
+    `;
+
+    rank++;
+  });
+}
+
+window.loadLeaderboard = loadLeaderboard;
+</script>
+
+</body>
+
+</html>
