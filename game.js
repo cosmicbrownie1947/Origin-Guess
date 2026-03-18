@@ -194,7 +194,7 @@ document.getElementById("feedback").classList.add("hidden");
 const buttons = document.querySelectorAll(".guess-buttons button");
 buttons.forEach(button => button.disabled = false);
 
-document.getElementById("game-image").style.border = "4px solid #222";
+document.getElementById("game-image").style.border = "none";
 
 updateProgressBar();
 
