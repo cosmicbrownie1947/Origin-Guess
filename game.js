@@ -46,8 +46,21 @@ explanation:"Dolphins can’t swim in the sand!"
 src:"ai/llama-picnic-ai.jpg",
 type:"ai",
 explanation:"Llamas can’t have picnics! They also look very cartoonish and unnatural."
+},
+
+{
+src:"ai/magenta-landscape-ai.jpg",
+type:"ai",
+explanation:"This looks straight out of a Dr. Suess book! The plants and water are very cartoonish."
+},
+
+{
+src:"ai/neon-heart-ai.jpg",
+type:"ai",
+explanation:"This neon sign has no cord to give it power! It is also freestanding, which is incredibly hard since it's a heart!"
 }
 
+// START ON RAINBOW_SKY
 
 ];
 
@@ -86,6 +99,12 @@ explanation:"How is that taco standing up on its own! Also, that cheese looks ve
 src:"ai/grey-bedroom-ai.jpg",
 type:"ai",
 explanation:"Although the bed is a wreck, the rest of the bedroom looks like it has never been touched."
+},
+
+{
+src:"ai/parrot-group-ai.jpg",
+type:"ai",
+explanation:"The texture on the birds is too smooth to be real. Plus, some of the details are lost along the way, like the bird's tails."
 }
   
 ];
@@ -95,12 +114,23 @@ const hardAI = [
 src:"field-goats-ai.jpg",
 type:"ai",
 explanation:"Our goat in the back left, where did his head go? Another good sign is the goat's fur, which looks far too groomed to be an outdoor goat."
+},
+
+{
+src:"mail-man-ai.jpg",
+type:"ai",
+explanation:"By looking at the man’s face, you can see that there is this odd smoothness to the skin. The coloration and texture don’t represent real skin."
+},
+
+{
+src:"night-mountain-ai.jpg",
+type:"ai",
+explanation:"The mountains here seem to be too sharp, as if they were drawn instead of photographed."
 }
   
 ];
 
 
-// COMBINE REAL + AI IMAGES BASED ON DIFFICULTY
 
 let images;
 
@@ -122,14 +152,12 @@ images = [...realImages, ...hardAI];
 let shuffledImages = [...images].sort(() => Math.random() - 0.5);
 
 
-// GAME STATE
 
 let currentRound = 0;
 let score = 0;
 let currentImage;
 
 
-// LOAD ROUND
 
 function loadRound(){
 
@@ -157,7 +185,6 @@ updateProgressBar();
 }
 
 
-// HANDLE GUESS
 
 function guess(choice){
 
@@ -197,7 +224,6 @@ feedbackBox.classList.remove("hidden");
 }
 
 
-// NEXT ROUND
 
 function nextRound(){
 
@@ -207,7 +233,6 @@ loadRound();
 }
 
 
-// PROGRESS BAR
 
 function updateProgressBar(){
 
@@ -218,7 +243,6 @@ document.getElementById("progress-fill").style.width = progress + "%";
 }
 
 
-// END GAME SCREEN
 
 function showResults(){
 
@@ -247,7 +271,5 @@ Are you better than the average player?
 }
 
 
-
-// START GAME
 
 loadRound();
