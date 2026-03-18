@@ -162,9 +162,13 @@ let currentImage;
 function loadRound(){
 
 if(currentRound >= 10){
-showResults();
-submitScore(score);
-return;
+  showResults();
+  if (typeof submitScore === "function") {
+    submitScore(score);
+  } else {
+    console.log("submitScore not ready");
+  }
+  return;
 }
 
 document.getElementById("round").textContent = currentRound + 1;
