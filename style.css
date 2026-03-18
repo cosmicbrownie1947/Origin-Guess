@@ -117,8 +117,9 @@ margin-top:40px;
 .difficulty-buttons{
 display:flex;
 flex-direction:column;
+align-items:center;
 gap:15px;
-margin-top:30px;
+margin-top:20px;
 }
 
 /* Play button larger */
