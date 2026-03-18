@@ -4,9 +4,21 @@ const difficulty = params.get("difficulty") || "easy";
 const realImages = [
 
 {
-src:"real/placeholder.jpg",
+src:"real/butterfly-wild-real.jpg",
 type:"real",
-explanation:"placeholder"
+explanation:"The good giveaway is the lighting and the plants. None of the blurry plants in the back loses any of their shape or parts."
+},
+
+{
+src:"real/college-student-real.jpg",
+type:"real",
+explanation:"It's easier to detect that this is real because of the wrinkles in the clothing and the uneven skin tones. AI doesn’t create small details like watch tans!"
+},
+
+{
+src:"real/golden-puppy-real.jpg",
+type:"real",
+explanation:"Check out that grass! AI doesn’t add the small details like sticks and leaves into the grass."
 }
 
 ];
