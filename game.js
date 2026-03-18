@@ -1,9 +1,5 @@
-// GET DIFFICULTY FROM URL
 const params = new URLSearchParams(window.location.search);
 const difficulty = params.get("difficulty") || "easy";
-
-
-// REAL IMAGES (USED IN EVERY MODE)
 
 const realImages = [
 
@@ -14,9 +10,6 @@ explanation:"placeholder"
 }
 
 ];
-
-
-// AI IMAGES BY DIFFICULTY
 
 const easyAI = [
 {
@@ -147,7 +140,7 @@ return;
 
 document.getElementById("round").textContent = currentRound + 1;
 
-currentImage = shuffledImages[currentRound];
+currentImage = shuffledImages[currentRound % shuffledImages.length];
 
 document.getElementById("game-image").src = currentImage.src;
 
