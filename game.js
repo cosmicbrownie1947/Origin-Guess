@@ -32,11 +32,24 @@ explanation:"Astronauts can’t walk on water!"
 },
 
 {
-src:"ai/placeholder.jpg",
+src:"ai/cat-smile-ai.jpg",
 type:"ai",
-explanation:"placeholder"
-}
-  
+explanation:"You can tell they are not real because they have a synthetic look that AI produces."
+},
+
+{
+src:"ai/cloud-scape-ai.jpg",
+type:"ai",
+explanation:"There are no cities that reach above the clouds! While there are towers, no full city has yet reached this height."
+},
+
+{
+src:"ai/desert-dolphin-ai.jpg",
+type:"ai",
+explanation:"Dolphins can’t swim in the sand!"
+},
+
+
 ];
 
 const mediumAI = [
@@ -45,14 +58,32 @@ src:"ai/blossom-temple-ai.jpg",
 type:"ai",
 explanation:"The flower petals at the bottom of the screen seem big compared to the size of the temple in the background. The colors are very saturated as well."
 },
+
+{
+src:"ai/blue-crab-ai.jpg",
+type:"ai",
+explanation:"Those bubbles don’t look like anything you would find in the ocean!"
+},
+
+{
+src:"ai/duo-dogs-ai.jpg",
+type:"ai",
+explanation:"The big giveaway here is the background. How is the front super lit, and the back isn't? To add, the texture on the dogs is a little too perfect."
+},
+
+{
+src:"ai/field-dog-ai.jpeg",
+type:"ai",
+explanation:"Check out those flower petals that lose their details in the wind. Those aren’t supposed to look like that!"
+},
   
 ];
 
 const hardAI = [
 {
-src:"placeholder.jpg",
+src:"field-goats-ai.jpg",
 type:"ai",
-explanation:"placeholder"
+explanation:"Our goat in the back left, where did his head go? Another good sign is the goat's fur, which looks far too groomed to be an outdoor goat."
 },
   
 ];
