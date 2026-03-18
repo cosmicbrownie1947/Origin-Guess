@@ -49,6 +49,12 @@ type:"ai",
 explanation:"Dolphins can’t swim in the sand!"
 },
 
+{
+src:"ai/llama-picnic-ai.jpg",
+type:"ai",
+explanation:"Llamas can’t have picnics! They also look very cartoonish and unnatural."
+},
+
 
 ];
 
@@ -75,6 +81,18 @@ explanation:"The big giveaway here is the background. How is the front super lit
 src:"ai/field-dog-ai.jpeg",
 type:"ai",
 explanation:"Check out those flower petals that lose their details in the wind. Those aren’t supposed to look like that!"
+},
+
+{
+src:"ai/freestand-taco-ai.jpeg",
+type:"ai",
+explanation:"How is that taco standing up on its own! Also, that cheese looks very unnatural."
+},
+
+{
+src:"ai/grey-bedroom-ai.jpg",
+type:"ai",
+explanation:"Although the bed is a wreck, the rest of the bedroom looks like it has never been touched."
 },
   
 ];
