@@ -48,7 +48,18 @@ import {
   limit
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// ✅ YOUR REAL CONFIG
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  getDocs, 
+  query, 
+  orderBy, 
+  limit
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+// 🔥 SAME CONFIG (must match game.html)
 const firebaseConfig = {
   apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
   authDomain: "origin-guess-leader.firebaseapp.com",
@@ -66,8 +77,8 @@ const db = getFirestore(app);
 // 📊 LOAD LEADERBOARD
 async function loadLeaderboard() {
   const q = query(
-    collection(db, "leaderboard"), 
-    orderBy("score", "desc"), 
+    collection(db, "leaderboard"),
+    orderBy("score", "desc"),
     limit(25)
   );
 
