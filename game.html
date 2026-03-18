@@ -61,6 +61,73 @@ Want to know where we got these images?
 
 <script src="game.js"></script>
 
+<!-- 🔥 FIREBASE + SCORE SYSTEM -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  getDocs, 
+  query, 
+  where,
+  updateDoc,
+  doc
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
+  authDomain: "origin-guess-leader.firebaseapp.com",
+  projectId: "origin-guess-leader",
+  storageBucket: "origin-guess-leader.firebasestorage.app",
+  messagingSenderId: "1030802873373",
+  appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
+  measurementId: "G-DVN6X5P07N"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+// 🧠 PLAYER ID (STAYS SAME BETWEEN GAMES)
+let playerId = localStorage.getItem("playerId");
+
+if (!playerId) {
+  playerId = "player_" + Math.floor(Math.random() * 1000000);
+  localStorage.setItem("playerId", playerId);
+}
+
+
+// 🏆 SUBMIT OR UPDATE SCORE
+async function submitScore(newScore) {
+  const leaderboardRef = collection(db, "leaderboard");
+
+  const q = query(leaderboardRef, where("playerId", "==", playerId));
+  const querySnapshot = await getDocs(q);
+
+  if (!querySnapshot.empty) {
+    querySnapshot.forEach(async (document) => {
+      const docRef = doc(db, "leaderboard", document.id);
+      const oldScore = document.data().score;
+
+      await updateDoc(docRef, {
+        score: oldScore + newScore
+      });
+    });
+  } else {
+    await addDoc(leaderboardRef, {
+      playerId: playerId,
+      score: newScore,
+      created: Date.now()
+    });
+  }
+}
+
+// make it usable in game.js
+window.submitScore = submitScore;
+
+</script>
+
 </body>
 
 </html>
