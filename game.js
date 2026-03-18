@@ -236,7 +236,6 @@ Are you better than the average player?
 
 <br><br>
 
-submitScore(score);
 
 <a href="game.html">
 <button style="padding:12px 24px;">Play Again</button>
