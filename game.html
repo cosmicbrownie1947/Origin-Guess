@@ -2,132 +2,127 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play | Origin Guess!</title>
 
-<title>Play | Origin Guess!</title>
-
-<link rel="stylesheet" href="game.css">
-
+  <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
 
-<header class="game-header">
+  <!-- HEADER -->
+  <header class="game-header">
+    <a href="index.html">
+      <img src="home.png" class="home-btn" alt="Home">
+    </a>
+    <img src="LOGO.jpg" class="header-logo" alt="Origin Guess">
+  </header>
 
-<a href="index.html">
-<img src="home.png" class="home-btn" alt="Home">
-</a>
+  <!-- GAME AREA -->
+  <div class="game-container">
 
-<img src="LOGO.jpg" class="header-logo" alt="Origin Guess">
+    <h1>Origin Guess!</h1>
+    <p class="round">Round <span id="round">1</span> / 10</p>
 
-</header>
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
 
-<div class="game-container">
+    <div class="image-box">
+      <img id="game-image" src="" alt="Guess Image">
+    </div>
 
-<h1>Origin Guess!</h1>
-<p class="round">Round <span id="round">1</span> / 10</p>
+    <div class="guess-buttons">
+      <button onclick="guess('ai')">AI Generated</button>
+      <button onclick="guess('real')">Real Image</button>
+    </div>
 
-<div class="progress-bar">
-<div id="progress-fill"></div>
-</div>
+    <div id="feedback" class="feedback hidden">
+      <p id="feedback-text"></p>
+      <button onclick="nextRound()">Next</button>
+    </div>
 
-<div class="image-box">
-<img id="game-image" src="" alt="Guess Image">
-</div>
+  </div>
 
-<div class="guess-buttons">
-<button onclick="guess('ai')">AI Generated</button>
-<button onclick="guess('real')">Real Image</button>
-</div>
+  <!-- FOOTER -->
+  <footer>
+    <p>Origin Guess, 2026</p>
 
-<div id="feedback" class="feedback hidden">
-<p id="feedback-text"></p>
-<button onclick="nextRound()">Next</button>
-</div>
+    <p class="source-link">
+      Want to know where we got these images?
+      <a href="about.html">Click here</a>
+    </p>
+  </footer>
 
-</div>
+  <!-- GAME LOGIC -->
+  <script src="game.js"></script>
 
-<footer>
+  <!-- FIREBASE -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      where,
+      updateDoc,
+      doc
+    } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-<p>Origin Guess, 2026</p>
+    console.log("🔥 Firebase loaded");
 
-<p class="source-link">
-Want to know where we got these images? 
-<a href="about.html">Click here</a>
-</p>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE"
+      authDomain: "origin-guess-leader.firebaseapp.com",
+      projectId: "origin-guess-leader",
+      storageBucket: "origin-guess-leader.firebasestorage.app",
+      messagingSenderId: "1030802873373",
+      appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
+      measurementId: "G-DVN6X5P07N"
+    };
 
-</footer>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-<script src="game.js"></script>
+    // PLAYER ID (persistent)
+    let playerId = localStorage.getItem("playerId");
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { 
-  getFirestore, 
-  collection, 
-  addDoc, 
-  getDocs, 
-  query, 
-  where,
-  updateDoc,
-  doc
-} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+    if (!playerId) {
+      playerId = "player_" + Math.floor(Math.random() * 1000000);
+      localStorage.setItem("playerId", playerId);
+    }
 
-// 🔥 YOUR CONFIG
-const firebaseConfig = {
-  apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
-  authDomain: "origin-guess-leader.firebaseapp.com",
-  projectId: "origin-guess-leader",
-  storageBucket: "origin-guess-leader.firebasestorage.app",
-  messagingSenderId: "1030802873373",
-  appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
-  measurementId: "G-DVN6X5P07N"
-};
+    // SUBMIT / UPDATE SCORE
+    async function submitScore(newScore) {
+      const leaderboardRef = collection(db, "leaderboard");
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-console.log("Firebase script loaded");
+      const q = query(leaderboardRef, where("playerId", "==", playerId));
+      const querySnapshot = await getDocs(q);
 
+      if (!querySnapshot.empty) {
+        querySnapshot.forEach(async (document) => {
+          const docRef = doc(db, "leaderboard", document.id);
+          const oldScore = document.data().score;
 
-// 🧠 PLAYER ID (persists between games)
-let playerId = localStorage.getItem("playerId");
+          await updateDoc(docRef, {
+            score: oldScore + newScore
+          });
+        });
+      } else {
+        await addDoc(leaderboardRef, {
+          playerId: playerId,
+          score: newScore,
+          created: Date.now()
+        });
+      }
+    }
 
-if (!playerId) {
-  playerId = "player_" + Math.floor(Math.random() * 1000000);
-  localStorage.setItem("playerId", playerId);
-}
-
-
-// 🏆 SAVE / UPDATE SCORE
-async function submitScore(newScore) {
-  const leaderboardRef = collection(db, "leaderboard");
-
-  const q = query(leaderboardRef, where("playerId", "==", playerId));
-  const querySnapshot = await getDocs(q);
-
-  if (!querySnapshot.empty) {
-    querySnapshot.forEach(async (document) => {
-      const docRef = doc(db, "leaderboard", document.id);
-      const oldScore = document.data().score;
-
-      await updateDoc(docRef, {
-        score: oldScore + newScore
-      });
-    });
-  } else {
-    await addDoc(leaderboardRef, {
-      playerId: playerId,
-      score: newScore,
-      created: Date.now()
-    });
-  }
-}
-
-// make it usable in game.js
-window.submitScore = submitScore;
-</script>
+    // make available globally
+    window.submitScore = submitScore;
+  </script>
 
 </body>
-
 </html>
