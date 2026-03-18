@@ -135,6 +135,7 @@ function loadRound(){
 
 if(currentRound >= 10){
 showResults();
+submitScore(score);
 return;
 }
 
