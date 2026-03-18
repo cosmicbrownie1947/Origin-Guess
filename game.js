@@ -11,7 +11,7 @@ const realImages = [
 src:"real/placeholder.jpg",
 type:"real",
 explanation:"placeholder"
-},
+}
 
 ];
 
@@ -53,7 +53,7 @@ explanation:"Dolphins can’t swim in the sand!"
 src:"ai/llama-picnic-ai.jpg",
 type:"ai",
 explanation:"Llamas can’t have picnics! They also look very cartoonish and unnatural."
-},
+}
 
 
 ];
@@ -93,7 +93,7 @@ explanation:"How is that taco standing up on its own! Also, that cheese looks ve
 src:"ai/grey-bedroom-ai.jpg",
 type:"ai",
 explanation:"Although the bed is a wreck, the rest of the bedroom looks like it has never been touched."
-},
+}
   
 ];
 
@@ -102,7 +102,7 @@ const hardAI = [
 src:"field-goats-ai.jpg",
 type:"ai",
 explanation:"Our goat in the back left, where did his head go? Another good sign is the goat's fur, which looks far too groomed to be an outdoor goat."
-},
+}
   
 ];
 
