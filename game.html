@@ -74,15 +74,15 @@
 
     console.log("🔥 Firebase loaded");
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE"
-      authDomain: "origin-guess-leader.firebaseapp.com",
-      projectId: "origin-guess-leader",
-      storageBucket: "origin-guess-leader.firebasestorage.app",
-      messagingSenderId: "1030802873373",
-      appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
-      measurementId: "G-DVN6X5P07N"
-    };
+const firebaseConfig = {
+  apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
+  authDomain: "origin-guess-leader.firebaseapp.com",
+  projectId: "origin-guess-leader",
+  storageBucket: "origin-guess-leader.firebasestorage.app",
+  messagingSenderId: "1030802873373",
+  appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
+  measurementId: "G-DVN6X5P07N"
+};
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
