@@ -111,19 +111,19 @@ explanation:"The texture on the birds is too smooth to be real. Plus, some of th
 
 const hardAI = [
 {
-src:"field-goats-ai.jpg",
+src:"ai/field-goats-ai.jpg",
 type:"ai",
 explanation:"Our goat in the back left, where did his head go? Another good sign is the goat's fur, which looks far too groomed to be an outdoor goat."
 },
 
 {
-src:"mail-man-ai.jpg",
+src:"ai/mail-man-ai.jpg",
 type:"ai",
 explanation:"By looking at the man’s face, you can see that there is this odd smoothness to the skin. The coloration and texture don’t represent real skin."
 },
 
 {
-src:"night-mountain-ai.jpg",
+src:"ai/night-mountain-ai.jpg",
 type:"ai",
 explanation:"The mountains here seem to be too sharp, as if they were drawn instead of photographed."
 }
