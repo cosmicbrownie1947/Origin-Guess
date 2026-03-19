@@ -20,7 +20,24 @@ explanation:"It's easier to detect that this is real because of the wrinkles in 
 src:"real/golden-puppy-real.jpg",
 type:"real",
 explanation:"Check out that grass! AI doesn’t add the small details like sticks and leaves into the grass."
+},
+{
+src:"real/curvy-road-real.jpg",
+type:"real",
+explanation:"A good giveaway is the lighting. The fog has created this dullness in the lighting that the camera was able to capture."
+},
+{
+src:"real/dusk-city-real.jpg",
+type:"real",
+explanation:"If you look closer at the buildings, you can see that none of them loses any detail or look morphed together."
+},
+{
+src:"real/field-cows-real.jpg",
+type:"real",
+explanation:"The colors in this image let us know that this image is real. AI images are all about color and creativity."
 }
+// ONE PARROT REAL
+
 ];
 
 // EASY AI
