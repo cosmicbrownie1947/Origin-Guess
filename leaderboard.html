@@ -71,8 +71,8 @@
     <p>Origin Guess, 2026</p>
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import { 
   getFirestore, 
   collection, 
@@ -80,99 +80,97 @@ import {
   query, 
   orderBy, 
   limit,
-  addDoc,
-  where,
-  updateDoc,
-  doc
+  addDoc
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
-      authDomain: "origin-guess-leader.firebaseapp.com",
-      projectId: "origin-guess-leader",
-      storageBucket: "origin-guess-leader.firebasestorage.app",
-      messagingSenderId: "1030802873373",
-      appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
-      measurementId: "G-DVN6X5P07N"
-    };
+const firebaseConfig = {
+  apiKey: "AIzaSyC2xDqm_y9ByyFZKKed5qQhY28iA5YyDjE",
+  authDomain: "origin-guess-leader.firebaseapp.com",
+  projectId: "origin-guess-leader",
+  storageBucket: "origin-guess-leader.firebasestorage.app",
+  messagingSenderId: "1030802873373",
+  appId: "1:1030802873373:web:9f66250bf4b562f6a7baf4",
+  measurementId: "G-DVN6X5P07N"
+};
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-    async function loadLeaderboard() {
-      console.log("📊 Loading leaderboard...");
+async function loadLeaderboard() {
+  console.log("📊 Loading leaderboard...");
 
-      const leaderboardDiv = document.getElementById("leaderboard");
-      const username = localStorage.getItem("username");
-      const lastScore = localStorage.getItem("lastScore");
+  const leaderboardDiv = document.getElementById("leaderboard");
+  const username = localStorage.getItem("username");
+  const lastScore = localStorage.getItem("lastScore");
 
-      if (!username && lastScore) {
-        document.getElementById("name-popup").classList.remove("hidden");
-        leaderboardDiv.innerHTML = "<p>Waiting for username...</p>";
-        return;
-      }
+  if (!username && lastScore) {
+    console.log("🚨 No username, showing popup");
+    document.getElementById("name-popup").classList.remove("hidden");
+    leaderboardDiv.innerHTML = "<p>Waiting for username...</p>";
+    return;
+  }
 
-      try {
-        const q = query(
-          collection(db, "leaderboard"),
-          orderBy("score", "desc"),
-          limit(25)
-        );
+  try {
+    const q = query(
+      collection(db, "leaderboard"),
+      orderBy("score", "desc"),
+      limit(25)
+    );
 
-        const querySnapshot = await getDocs(q);
+    const querySnapshot = await getDocs(q);
 
-        if (querySnapshot.empty) {
-          leaderboardDiv.innerHTML = "<p>No scores yet 😢</p>";
-          return;
-        }
-
-        leaderboardDiv.innerHTML = "";
-
-        let rank = 1;
-
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-
-          leaderboardDiv.innerHTML += `
-            <p>#${rank} — ${data.username}: ${data.score}</p>
-          `;
-
-          rank++;
-        });
-
-      } catch (error) {
-        console.error("Error:", error);
-        leaderboardDiv.innerHTML = "<p>Error loading leaderboard 😭</p>";
-      }
+    if (querySnapshot.empty) {
+      leaderboardDiv.innerHTML = "<p>No scores yet 😢</p>";
+      return;
     }
+
+    leaderboardDiv.innerHTML = "";
+
+    let rank = 1;
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+
+      leaderboardDiv.innerHTML += `
+        <p>#${rank} — ${data.username}: ${data.score}</p>
+      `;
+
+      rank++;
+    });
+
+  } catch (error) {
+    console.error("LOAD ERROR:", error.message);
+    leaderboardDiv.innerHTML = "<p>Error loading leaderboard 😭</p>";
+  }
+}
 
 window.addEventListener("DOMContentLoaded", () => {
 
-  // attach button FIRST
   document.getElementById("submit-name").addEventListener("click", async () => {
+
+    console.log("🔥 BUTTON CLICKED");
 
     try {
       const input = document.getElementById("username-input").value.trim();
       const errorMsg = document.getElementById("error-message");
+
+      console.log("👤 USERNAME:", input);
 
       if (!input) {
         errorMsg.textContent = "Please enter a username.";
         return;
       }
 
-      const leaderboardRef = collection(db, "leaderboard");
-
-      const q = query(leaderboardRef, where("username", "==", input));
-      const snapshot = await getDocs(q);
-
-      if (!snapshot.empty) {
-        errorMsg.textContent = "Username already taken. Try another.";
-        return;
-      }
-
+      // ✅ SAVE USERNAME FIRST (no conditions blocking it)
       localStorage.setItem("username", input);
+      console.log("💾 Saved username to localStorage");
 
       const score = parseInt(localStorage.getItem("lastScore")) || 0;
+      console.log("🏆 Score:", score);
+
+      const leaderboardRef = collection(db, "leaderboard");
+
+      console.log("☁️ Sending to Firebase...");
 
       await addDoc(leaderboardRef, {
         username: input,
@@ -180,21 +178,23 @@ window.addEventListener("DOMContentLoaded", () => {
         created: Date.now()
       });
 
-      document.getElementById("name-popup").classList.add("hidden");
+      console.log("✅ Firebase save success");
+
+      // ✅ FORCE CLOSE POPUP (no CSS issues)
+      document.getElementById("name-popup").style.display = "none";
 
       loadLeaderboard();
 
     } catch (error) {
-      console.error("SUBMIT ERROR:", error);
+      console.error("❌ SUBMIT ERROR:", error.message);
     }
 
   });
 
-  // load leaderboard AFTER listener exists
   loadLeaderboard();
 
 });
-  </script>
+</script>
 
 </body>
 </html>
