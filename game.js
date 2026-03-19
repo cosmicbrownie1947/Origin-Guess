@@ -153,7 +153,13 @@ explanation:"Bird textures too smooth."
 src:"ai/red-tree-ai.jpg",
 type:"ai",
 explanation:"There are leaves all over the ground, but the tree looks like it hasn’t lost a single leaf!"
+},
+{
+src:"ai/watermelon-plate-ai.jpeg",
+type:"ai",
+explanation:"The shadow of the watermelon doesn’t match the shape of the watermelon!"
 }
+// YELLOW CAR AI NEXT
 ];
 
 // HARD AI
@@ -182,8 +188,16 @@ explanation:"This crow looks shinier than a natural crow, which has a matte fini
 src:"ai/snow-fox-ai.jpeg",
 type:"ai",
 explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
+},
+src:"ai/student-studying-ai.jpeg",
+type:"ai",
+explanation:"It’s a high-quality image, but the wording on the headphones is blurry! Also, the lighting is inaccurate."
+},
+{
+src:"ai/woman-working-ai.jpg",
+type:"ai",
+explanation:"The picture seems to look too perfect, especially in the skin and hair."
 }
-// STUDENT STUDYING AI
 ];
 
 // SELECT IMAGES
