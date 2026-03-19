@@ -161,7 +161,7 @@ type:"ai",
 explanation:"This crow looks shinier than a natural crow, which has a matte finish."
 },
 {
-src:"ai/snow-fox-ai.jpg",
+src:"ai/snow-fox-ai.jpeg",
 type:"ai",
 explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
 }
