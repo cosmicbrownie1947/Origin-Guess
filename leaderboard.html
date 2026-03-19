@@ -103,25 +103,50 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("submit-name").addEventListener("click", async () => {
 
-    const input = document.getElementById("username-input").value.trim();
-    if (!input) return;
+  const input = document.getElementById("username-input").value.trim();
+  if (!input) return;
 
-    localStorage.setItem("username", input);
+  localStorage.setItem("username", input);
 
-    const leaderboardRef = collection(db, "leaderboard");
+  const lastScore = parseInt(localStorage.getItem("lastScore")) || 0;
+  console.log("🆕 New Score:", lastScore);
 
-    // 🔥 CHECK IF USER EXISTS
-    const q = query(leaderboardRef, where("username", "==", input));
-    const snapshot = await getDocs(q);
+  const leaderboardRef = collection(db, "leaderboard");
 
-    if (!snapshot.empty) {
-      // ✅ UPDATE existing score
-      const docRef = snapshot.docs[0].ref;
-      const currentScore = snapshot.docs[0].data().score;
+  const q = query(leaderboardRef, where("username", "==", input));
+  const snapshot = await getDocs(q);
 
-      await updateDoc(docRef, {
-        score: currentScore + lastScore
-      });
+  if (!snapshot.empty) {
+    const docSnap = snapshot.docs[0];
+    const docRef = docSnap.ref;
+
+    const currentScore = docSnap.data().score || 0;
+    console.log("📊 Current Score:", currentScore);
+
+    const newTotal = currentScore + lastScore;
+    console.log("✅ New Total:", newTotal);
+
+    await updateDoc(docRef, {
+      score: newTotal
+    });
+
+  } else {
+    console.log("👤 New user created");
+
+    await addDoc(leaderboardRef, {
+      username: input,
+      score: lastScore,
+      created: Date.now()
+    });
+  }
+
+  // 🔥 IMPORTANT: reset lastScore so it doesn't double add
+  localStorage.setItem("lastScore", 0);
+
+  document.getElementById("name-popup").style.display = "none";
+
+  loadLeaderboard();
+});
 
     } else {
       // ✅ CREATE new user
