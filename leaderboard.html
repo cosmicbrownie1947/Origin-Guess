@@ -98,17 +98,44 @@ async function loadLeaderboard() {
 }
 
 // 🚀 MAIN
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
 
   const username = localStorage.getItem("username");
   const lastScore = parseInt(localStorage.getItem("lastScore")) || 0;
 
-  // show popup if needed
-  if (!username && lastScore) {
+  const leaderboardRef = collection(db, "leaderboard");
+
+  // 🔥 AUTO UPDATE SCORE (THIS FIXES YOUR PROBLEM)
+  if (username && lastScore > 0) {
+    console.log("⚡ Auto updating score...");
+
+    const q = query(leaderboardRef, where("username", "==", username));
+    const snapshot = await getDocs(q);
+
+    if (!snapshot.empty) {
+      const docSnap = snapshot.docs[0];
+      const docRef = docSnap.ref;
+
+      const currentScore = docSnap.data().score || 0;
+      const newTotal = currentScore + lastScore;
+
+      console.log("📊 Auto Add:", currentScore, "+", lastScore, "=", newTotal);
+
+      await updateDoc(docRef, {
+        score: newTotal
+      });
+    }
+
+    // reset score so it doesn't double add
+    localStorage.setItem("lastScore", 0);
+  }
+
+  // 🧠 SHOW POPUP ONLY IF USER DOESN’T EXIST
+  if (!username && lastScore > 0) {
     document.getElementById("name-popup").classList.remove("hidden");
   }
 
-  // 🧠 SUBMIT USERNAME
+  // 🧠 SUBMIT USERNAME (first-time users)
   document.getElementById("submit-name").addEventListener("click", async () => {
 
     const input = document.getElementById("username-input").value.trim();
@@ -117,48 +144,23 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("username", input);
 
     const scoreToAdd = parseInt(localStorage.getItem("lastScore")) || 0;
-    console.log("🆕 Score to add:", scoreToAdd);
 
-    const leaderboardRef = collection(db, "leaderboard");
+    console.log("👤 Creating new user with score:", scoreToAdd);
 
-    const q = query(leaderboardRef, where("username", "==", input));
-    const snapshot = await getDocs(q);
+    await addDoc(leaderboardRef, {
+      username: input,
+      score: scoreToAdd,
+      created: Date.now()
+    });
 
-    if (!snapshot.empty) {
-      // ✅ UPDATE existing user
-      const docSnap = snapshot.docs[0];
-      const docRef = docSnap.ref;
-
-      const currentScore = docSnap.data().score || 0;
-      const newTotal = currentScore + scoreToAdd;
-
-      console.log("📊 Old:", currentScore, "| New:", newTotal);
-
-      await updateDoc(docRef, {
-        score: newTotal
-      });
-
-    } else {
-      // ✅ CREATE new user
-      console.log("👤 Creating new user");
-
-      await addDoc(leaderboardRef, {
-        username: input,
-        score: scoreToAdd,
-        created: Date.now()
-      });
-    }
-
-    // reset score so it doesn't double-add
     localStorage.setItem("lastScore", 0);
 
-    // close popup
     document.getElementById("name-popup").style.display = "none";
 
     loadLeaderboard();
   });
 
-  // 🔁 PLAY AGAIN
+  // 🔁 PLAY AGAIN BUTTON
   document.getElementById("play-again").addEventListener("click", () => {
     document.body.classList.add("fade-out");
 
@@ -167,6 +169,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 400);
   });
 
+  // initial load
   loadLeaderboard();
 });
 </script>
