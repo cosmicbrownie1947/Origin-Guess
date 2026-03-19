@@ -109,6 +109,7 @@ src:"ai/parrot-group-ai.jpg",
 type:"ai",
 explanation:"Bird textures too smooth."
 }
+  //LEFT OFF ON RED TREE
 ];
 
 // HARD AI
