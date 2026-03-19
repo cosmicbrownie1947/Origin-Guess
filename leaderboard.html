@@ -19,7 +19,21 @@
   </header>
 
   <!-- MAIN -->
-  <div class="game-container">
+<div id="name-popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>Enter a Username</h2>
+
+    <p style="font-size:14px; margin-bottom:10px;">
+      Please do NOT use your real name for privacy.
+    </p>
+
+    <input type="text" id="username-input" placeholder="Enter username">
+
+    <p id="error-message" style="color:red; font-size:14px;"></p>
+
+    <button id="submit-name">Submit</button>
+  </div>
+</div>
     <h1>Leaderboard</h1>
     <div id="leaderboard">
       <p>Loading...</p>
