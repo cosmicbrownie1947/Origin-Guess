@@ -150,7 +150,7 @@ let currentImage;
 function loadRound(){
 
 if(currentRound >= 10){
-  localStorage.setItem("lastScore", score); // ✅ SAVE SCORE
+  localStorage.setItem("lastScore", score.toString());
   showResults();
   return;
 }
