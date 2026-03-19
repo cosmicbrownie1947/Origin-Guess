@@ -69,6 +69,11 @@ explanation:"This neon sign has no cord to give it power!"
 src:"ai/rainbow-sky-ai.jpeg",
 type:"ai",
 explanation:"This looks straight out of a picture book! The biggest hint is the sky; it can’t change that fast!"
+},
+{
+src:"ai/snow-bunny-ai.jpeg",
+type:"ai",
+explanation:"Those bunnies have some very red noses! Also, snowflakes are never that big to see their patterns."
 }
 ];
 
@@ -108,8 +113,12 @@ explanation:"Room looks untouched except bed."
 src:"ai/parrot-group-ai.jpg",
 type:"ai",
 explanation:"Bird textures too smooth."
+},
+{
+src:"ai/red-tree-ai.jpg",
+type:"ai",
+explanation:"There are leaves all over the ground, but the tree looks like it hasn’t lost a single leaf!"
 }
-  //LEFT OFF ON RED TREE
 ];
 
 // HARD AI
@@ -128,6 +137,16 @@ explanation:"Skin texture is overly smooth."
 src:"ai/night-mountain-ai.jpg",
 type:"ai",
 explanation:"Mountains look drawn."
+},
+{
+src:"ai/snow-crow-ai.jpg",
+type:"ai",
+explanation:"This crow looks shinier than a natural crow, which has a matte finish."
+},
+{
+src:"ai/snow-fox-ai.jpg",
+type:"ai",
+explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
 }
 ];
 
