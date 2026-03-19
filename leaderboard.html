@@ -146,14 +146,12 @@ import {
       }
     }
 
-    // ✅ FIXED: WAIT FOR DOM BEFORE ADDING EVENT
-    window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
-  // ✅ attach button FIRST
+  // attach button FIRST
   document.getElementById("submit-name").addEventListener("click", async () => {
 
     try {
-
       const input = document.getElementById("username-input").value.trim();
       const errorMsg = document.getElementById("error-message");
 
@@ -192,15 +190,10 @@ import {
 
   });
 
-  // ✅ THEN load leaderboard AFTER listener exists
+  // load leaderboard AFTER listener exists
   loadLeaderboard();
 
 });
-
-      // also load leaderboard AFTER DOM is ready
-      loadLeaderboard();
-
-    });
   </script>
 
 </body>
