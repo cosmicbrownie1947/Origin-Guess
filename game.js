@@ -64,6 +64,11 @@ explanation:"This looks straight out of a Dr. Suess book!"
 src:"ai/neon-heart-ai.jpg",
 type:"ai",
 explanation:"This neon sign has no cord to give it power!"
+},
+{
+src:"ai/rainbow-sky-ai.jpeg",
+type:"ai",
+explanation:"This looks straight out of a picture book! The biggest hint is the sky; it can’t change that fast!"
 }
 ];
 
