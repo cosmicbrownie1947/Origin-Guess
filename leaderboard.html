@@ -46,8 +46,7 @@ import {
   limit,
   addDoc,
   where,
-  updateDoc,
-  doc
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -59,11 +58,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// 🏆 LOAD LEADERBOARD
 async function loadLeaderboard() {
   const leaderboardDiv = document.getElementById("leaderboard");
   const currentUser = localStorage.getItem("username");
 
-  const q = query(collection(db, "leaderboard"), orderBy("score", "desc"), limit(25));
+  const q = query(
+    collection(db, "leaderboard"),
+    orderBy("score", "desc"),
+    limit(25)
+  );
+
   const snapshot = await getDocs(q);
 
   leaderboardDiv.innerHTML = "";
@@ -92,78 +97,71 @@ async function loadLeaderboard() {
   });
 }
 
+// 🚀 MAIN
 window.addEventListener("DOMContentLoaded", () => {
 
   const username = localStorage.getItem("username");
   const lastScore = parseInt(localStorage.getItem("lastScore")) || 0;
 
+  // show popup if needed
   if (!username && lastScore) {
     document.getElementById("name-popup").classList.remove("hidden");
   }
 
+  // 🧠 SUBMIT USERNAME
   document.getElementById("submit-name").addEventListener("click", async () => {
 
-  const input = document.getElementById("username-input").value.trim();
-  if (!input) return;
+    const input = document.getElementById("username-input").value.trim();
+    if (!input) return;
 
-  localStorage.setItem("username", input);
+    localStorage.setItem("username", input);
 
-  const lastScore = parseInt(localStorage.getItem("lastScore")) || 0;
-  console.log("🆕 New Score:", lastScore);
+    const scoreToAdd = parseInt(localStorage.getItem("lastScore")) || 0;
+    console.log("🆕 Score to add:", scoreToAdd);
 
-  const leaderboardRef = collection(db, "leaderboard");
+    const leaderboardRef = collection(db, "leaderboard");
 
-  const q = query(leaderboardRef, where("username", "==", input));
-  const snapshot = await getDocs(q);
+    const q = query(leaderboardRef, where("username", "==", input));
+    const snapshot = await getDocs(q);
 
-  if (!snapshot.empty) {
-    const docSnap = snapshot.docs[0];
-    const docRef = docSnap.ref;
+    if (!snapshot.empty) {
+      // ✅ UPDATE existing user
+      const docSnap = snapshot.docs[0];
+      const docRef = docSnap.ref;
 
-    const currentScore = docSnap.data().score || 0;
-    console.log("📊 Current Score:", currentScore);
+      const currentScore = docSnap.data().score || 0;
+      const newTotal = currentScore + scoreToAdd;
 
-    const newTotal = currentScore + lastScore;
-    console.log("✅ New Total:", newTotal);
+      console.log("📊 Old:", currentScore, "| New:", newTotal);
 
-    await updateDoc(docRef, {
-      score: newTotal
-    });
-
-  } else {
-    console.log("👤 New user created");
-
-    await addDoc(leaderboardRef, {
-      username: input,
-      score: lastScore,
-      created: Date.now()
-    });
-  }
-
-  // 🔥 IMPORTANT: reset lastScore so it doesn't double add
-  localStorage.setItem("lastScore", 0);
-
-  document.getElementById("name-popup").style.display = "none";
-
-  loadLeaderboard();
-});
+      await updateDoc(docRef, {
+        score: newTotal
+      });
 
     } else {
       // ✅ CREATE new user
+      console.log("👤 Creating new user");
+
       await addDoc(leaderboardRef, {
         username: input,
-        score: lastScore,
+        score: scoreToAdd,
         created: Date.now()
       });
     }
 
+    // reset score so it doesn't double-add
+    localStorage.setItem("lastScore", 0);
+
+    // close popup
     document.getElementById("name-popup").style.display = "none";
 
     loadLeaderboard();
   });
 
+  // 🔁 PLAY AGAIN
   document.getElementById("play-again").addEventListener("click", () => {
     document.body.classList.add("fade-out");
+
     setTimeout(() => {
       window.location.href = "index.html";
     }, 400);
@@ -172,6 +170,5 @@ window.addEventListener("DOMContentLoaded", () => {
   loadLeaderboard();
 });
 </script>
-
 </body>
 </html>
