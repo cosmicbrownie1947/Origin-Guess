@@ -148,6 +148,7 @@ src:"ai/snow-fox-ai.jpg",
 type:"ai",
 explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
 }
+// STUDENT STUDYING AI
 ];
 
 // SELECT IMAGES
