@@ -58,7 +58,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// 🏆 LOAD LEADERBOARD
 async function loadLeaderboard() {
   const leaderboardDiv = document.getElementById("leaderboard");
   const currentUser = localStorage.getItem("username");
@@ -97,7 +96,6 @@ async function loadLeaderboard() {
   });
 }
 
-// 🚀 MAIN
 window.addEventListener("DOMContentLoaded", async () => {
 
   const username = localStorage.getItem("username");
@@ -105,7 +103,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   const leaderboardRef = collection(db, "leaderboard");
 
-  // 🔥 AUTO UPDATE SCORE (THIS FIXES YOUR PROBLEM)
   if (username && lastScore > 0) {
     console.log("⚡ Auto updating score...");
 
@@ -130,12 +127,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     localStorage.setItem("lastScore", 0);
   }
 
-  // 🧠 SHOW POPUP ONLY IF USER DOESN’T EXIST
   if (!username && lastScore > 0) {
     document.getElementById("name-popup").classList.remove("hidden");
   }
 
-  // 🧠 SUBMIT USERNAME (first-time users)
   document.getElementById("submit-name").addEventListener("click", async () => {
 
     const input = document.getElementById("username-input").value.trim();
@@ -160,7 +155,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     loadLeaderboard();
   });
 
-  // 🔁 PLAY AGAIN BUTTON
   document.getElementById("play-again").addEventListener("click", () => {
     document.body.classList.add("fade-out");
 
