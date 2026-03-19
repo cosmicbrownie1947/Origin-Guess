@@ -95,30 +95,29 @@ const firebaseConfig = {
       localStorage.setItem("playerId", playerId);
     }
 
-    // SUBMIT / UPDATE SCORE
-    async function submitScore(newScore) {
-      const leaderboardRef = collection(db, "leaderboard");
+async function submitScore(username, newScore) {
+  const leaderboardRef = collection(db, "leaderboard");
 
-      const q = query(leaderboardRef, where("playerId", "==", playerId));
-      const querySnapshot = await getDocs(q);
+  const q = query(leaderboardRef, where("username", "==", username));
+  const querySnapshot = await getDocs(q);
 
-      if (!querySnapshot.empty) {
-        querySnapshot.forEach(async (document) => {
-          const docRef = doc(db, "leaderboard", document.id);
-          const oldScore = document.data().score;
+  if (!querySnapshot.empty) {
+    querySnapshot.forEach(async (document) => {
+      const docRef = doc(db, "leaderboard", document.id);
+      const oldScore = document.data().score;
 
-          await updateDoc(docRef, {
-            score: oldScore + newScore
-          });
-        });
-      } else {
-        await addDoc(leaderboardRef, {
-          playerId: playerId,
-          score: newScore,
-          created: Date.now()
-        });
-      }
-    }
+      await updateDoc(docRef, {
+        score: oldScore + newScore
+      });
+    });
+  } else {
+    await addDoc(leaderboardRef, {
+      username: username,
+      score: newScore,
+      created: Date.now()
+    });
+  }
+}
 
     // make available globally
     window.submitScore = submitScore;
