@@ -149,41 +149,53 @@ import {
     // ✅ FIXED: WAIT FOR DOM BEFORE ADDING EVENT
     window.addEventListener("DOMContentLoaded", () => {
 
-      document.getElementById("submit-name").addEventListener("click", async () => {
+  // ✅ attach button FIRST
+  document.getElementById("submit-name").addEventListener("click", async () => {
 
-        const input = document.getElementById("username-input").value.trim();
-        const errorMsg = document.getElementById("error-message");
+    try {
 
-        if (!input) {
-          errorMsg.textContent = "Please enter a username.";
-          return;
-        }
+      const input = document.getElementById("username-input").value.trim();
+      const errorMsg = document.getElementById("error-message");
 
-        const leaderboardRef = collection(db, "leaderboard");
+      if (!input) {
+        errorMsg.textContent = "Please enter a username.";
+        return;
+      }
 
-        const q = query(leaderboardRef, where("username", "==", input));
-        const snapshot = await getDocs(q);
+      const leaderboardRef = collection(db, "leaderboard");
 
-        if (!snapshot.empty) {
-          errorMsg.textContent = "Username already taken. Try another.";
-          return;
-        }
+      const q = query(leaderboardRef, where("username", "==", input));
+      const snapshot = await getDocs(q);
 
-        localStorage.setItem("username", input);
+      if (!snapshot.empty) {
+        errorMsg.textContent = "Username already taken. Try another.";
+        return;
+      }
 
-        const score = parseInt(localStorage.getItem("lastScore")) || 0;
+      localStorage.setItem("username", input);
 
-        await addDoc(leaderboardRef, {
-          username: input,
-          score: score,
-          created: Date.now()
-        });
+      const score = parseInt(localStorage.getItem("lastScore")) || 0;
 
-        document.getElementById("name-popup").classList.add("hidden");
-
-        loadLeaderboard();
-
+      await addDoc(leaderboardRef, {
+        username: input,
+        score: score,
+        created: Date.now()
       });
+
+      document.getElementById("name-popup").classList.add("hidden");
+
+      loadLeaderboard();
+
+    } catch (error) {
+      console.error("SUBMIT ERROR:", error);
+    }
+
+  });
+
+  // ✅ THEN load leaderboard AFTER listener exists
+  loadLeaderboard();
+
+});
 
       // also load leaderboard AFTER DOM is ready
       loadLeaderboard();
