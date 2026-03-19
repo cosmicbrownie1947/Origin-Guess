@@ -189,6 +189,7 @@ src:"ai/snow-fox-ai.jpeg",
 type:"ai",
 explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
 },
+{
 src:"ai/student-studying-ai.jpeg",
 type:"ai",
 explanation:"It’s a high-quality image, but the wording on the headphones is blurry! Also, the lighting is inaccurate."
