@@ -12,8 +12,11 @@ body{
     flex-direction:column;
     min-height:100vh;
 }
-
-/* 🌫️ FADE TRANSITIONS */
+.game-container{
+    flex:1;
+    text-align:center;
+    padding:60px 20px;
+}
 body.fade-out{
     opacity:0;
     transition:0.4s ease;
