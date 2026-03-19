@@ -35,9 +35,27 @@ explanation:"If you look closer at the buildings, you can see that none of them 
 src:"real/field-cows-real.jpg",
 type:"real",
 explanation:"The colors in this image let us know that this image is real. AI images are all about color and creativity."
+},
+{
+src:"real/one-parrot-real.jpg",
+type:"real",
+explanation:"The texture on the birds here is authentic and asymmetrical. The lighting also matches the background."
+},
+{
+src:"real/outdoor-temple-real.jpg",
+type:"real",
+explanation:"The concrete and landscape here look genuine and aged. AI models tend to make their images look very new and smooth."
+},
+{
+src:"real/purple-flower-real.jpg",
+type:"real",
+explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness as AI includes."
+},
+{
+src:"real/yellow-field-real.jpg",
+type:"real",
+explanation:"You can see it is real because the lighting is even and it doesn’t include any unnatural smoothness as AI uses in its generation."
 }
-// ONE PARROT REAL
-
 ];
 
 // EASY AI
