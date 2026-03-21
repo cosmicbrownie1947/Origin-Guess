@@ -222,15 +222,21 @@ body.fade-out{
     font-weight:bold;
     cursor:pointer;
 }
+.username-warning{
+  font-size:13px;
+  color:#666;
+  margin:10px 0 15px 0;
+}
 
 #play-again:hover{
     opacity:0.9;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    background:#222;
-    color:white;
-    font-size:14px;
+footer a{
+  color:#fff;
+  text-decoration:underline;
+}
+
+footer a:hover{
+  opacity:0.8;
 }
