@@ -19,6 +19,12 @@
 <div id="name-popup" class="popup hidden">
   <div class="popup-content">
     <h2>Enter a Username</h2>
+
+    <!-- 🟢 PRIVACY WARNING -->
+    <p class="username-warning">
+      Please do NOT use your real name. This game does not require personal information.
+    </p>
+
     <input type="text" id="username-input" placeholder="Enter username">
     <p id="error-message"></p>
     <button id="submit-name">Submit</button>
@@ -34,6 +40,14 @@
     <p>Loading...</p>
   </div>
 </div>
+
+<!-- 🔽 FOOTER -->
+<footer>
+  <p>
+    © 2026 Origin Guess |
+    <a href="privacy.html">Privacy Policy</a>
+  </p>
+</footer>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
@@ -123,7 +137,6 @@ window.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    // reset score so it doesn't double add
     localStorage.setItem("lastScore", 0);
   }
 
@@ -139,8 +152,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     localStorage.setItem("username", input);
 
     const scoreToAdd = parseInt(localStorage.getItem("lastScore")) || 0;
-
-    console.log("👤 Creating new user with score:", scoreToAdd);
 
     await addDoc(leaderboardRef, {
       username: input,
@@ -163,9 +174,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     }, 400);
   });
 
-  // initial load
   loadLeaderboard();
 });
 </script>
+
 </body>
 </html>
