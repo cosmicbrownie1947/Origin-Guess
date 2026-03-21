@@ -106,6 +106,11 @@ type:"ai",
 explanation:"This looks straight out of a picture book! The biggest hint is the sky; it can’t change that fast!"
 },
 {
+src:"ai/yellow-octopus-ai.jpg",
+type:"ai",
+explanation:"No octopus has those colors! He also looks very animated compared to a real octopus."
+},
+{
 src:"ai/snow-bunny-ai.jpeg",
 type:"ai",
 explanation:"Those bunnies have some very red noses! Also, snowflakes are never that big to see their patterns."
@@ -145,6 +150,11 @@ type:"ai",
 explanation:"Room looks untouched except bed."
 },
 {
+src:"ai/yellow-car-ai.jpg",
+type:"ai",
+explanation:"While the mountain has a texture, do you notice how the overall shape looks off? It looks as if the bushes were drawn on top!"
+},
+{
 src:"ai/parrot-group-ai.jpg",
 type:"ai",
 explanation:"Bird textures too smooth."
@@ -159,7 +169,6 @@ src:"ai/watermelon-plate-ai.jpeg",
 type:"ai",
 explanation:"The shadow of the watermelon doesn’t match the shape of the watermelon!"
 }
-// YELLOW CAR AI NEXT
 ];
 
 // HARD AI
@@ -168,6 +177,16 @@ const hardAI = [
 src:"ai/field-goats-ai.jpg",
 type:"ai",
 explanation:"Missing goat head and unnatural fur."
+},
+{
+src:"ai/young-student-ai.jpg",
+type:"ai",
+explanation:"You can tell this is AI because the girl's skin texture is smooth and unnatural"
+},
+{
+src:"ai/library-lights-ai.jpg",
+type:"ai",
+explanation:"While this does seem very realistic, small details like the lights have no realistic shape."
 },
 {
 src:"ai/mail-man-ai.jpg",
