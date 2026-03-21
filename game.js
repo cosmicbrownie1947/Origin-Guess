@@ -71,6 +71,11 @@ type:"ai",
 explanation:"Astronauts can’t walk on water!"
 },
 {
+src:"ai/library-guy-ai.jpg",
+type:"ai",
+explanation:"Take a look at those magazines; none of those are real words or faces!"
+},
+{
 src:"ai/cat-smile-ai.jpg",
 type:"ai",
 explanation:"You can tell they are not real because they have a synthetic look that AI produces."
@@ -165,6 +170,11 @@ type:"ai",
 explanation:"There are leaves all over the ground, but the tree looks like it hasn’t lost a single leaf!"
 },
 {
+src:"ai/basketball-hoop-ai.jpg",
+type:"ai",
+explanation:"While this looks very believable, the scene here looks very artificial and too clean."
+},
+{
 src:"ai/watermelon-plate-ai.jpeg",
 type:"ai",
 explanation:"The shadow of the watermelon doesn’t match the shape of the watermelon!"
@@ -177,6 +187,11 @@ const hardAI = [
 src:"ai/field-goats-ai.jpg",
 type:"ai",
 explanation:"Missing goat head and unnatural fur."
+},
+{
+src:"ai/cat-reading-ai.jpg",
+type:"ai",
+explanation:"Take a look at those books! Those words look like they are blending into one."
 },
 {
 src:"ai/young-student-ai.jpg",
