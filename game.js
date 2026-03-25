@@ -1,10 +1,8 @@
 const params = new URLSearchParams(window.location.search);
 const difficulty = params.get("difficulty") || "easy";
 
-// 🧠 USERNAME (for later use)
 let username = localStorage.getItem("username");
 
-// REAL IMAGES
 const realImages = [
 {
 src:"real/butterfly-wild-real.jpg",
@@ -50,6 +48,10 @@ explanation:"The concrete and landscape here look genuine and aged. AI models te
 src:"real/purple-flower-real.jpg",
 type:"real",
 explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness as AI includes."
+},
+src:"real/cheese-pull-real.jpg",
+type:"real",
+explanation:"The cheese pull is uneven, with the sides of the pizza falling off."
 },
 {
 src:"real/yellow-field-real.jpg",
