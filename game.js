@@ -109,7 +109,7 @@ type:"ai",
 explanation:"This neon sign has no cord to give it power!"
 },
 {
-src:"ai/rainbow-sky-ai.jpeg",
+src:"ai/rainbow-sky-ai.jpg",
 type:"ai",
 explanation:"This looks straight out of a picture book! The biggest hint is the sky; it can’t change that fast!"
 },
@@ -119,7 +119,7 @@ type:"ai",
 explanation:"No octopus has those colors! He also looks very animated compared to a real octopus."
 },
 {
-src:"ai/snow-bunny-ai.jpeg",
+src:"ai/snow-bunny-ai.jpg",
 type:"ai",
 explanation:"Those bunnies have some very red noses! Also, snowflakes are never that big to see their patterns."
 }
@@ -143,12 +143,12 @@ type:"ai",
 explanation:"Lighting inconsistency in background."
 },
 {
-src:"ai/field-dog-ai.jpeg",
+src:"ai/field-dog-ai.jpg",
 type:"ai",
 explanation:"Flower petals lose detail unnaturally."
 },
 {
-src:"ai/freestand-taco-ai.jpeg",
+src:"ai/freestand-taco-ai.jpg",
 type:"ai",
 explanation:"The taco standing upright is unrealistic."
 },
@@ -178,7 +178,7 @@ type:"ai",
 explanation:"While this looks very believable, the scene here looks very artificial and too clean."
 },
 {
-src:"ai/watermelon-plate-ai.jpeg",
+src:"ai/watermelon-plate-ai.jpg",
 type:"ai",
 explanation:"The shadow of the watermelon doesn’t match the shape of the watermelon!"
 }
@@ -222,12 +222,12 @@ type:"ai",
 explanation:"This crow looks shinier than a natural crow, which has a matte finish."
 },
 {
-src:"ai/snow-fox-ai.jpeg",
+src:"ai/snow-fox-ai.jpg",
 type:"ai",
 explanation:"While the lighting is very realistic, the giveaway here is the hair! Those are some very long hairs coming off his back."
 },
 {
-src:"ai/student-studying-ai.jpeg",
+src:"ai/student-studying-ai.jpg",
 type:"ai",
 explanation:"It’s a high-quality image, but the wording on the headphones is blurry! Also, the lighting is inaccurate."
 },
