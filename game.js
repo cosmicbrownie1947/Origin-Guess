@@ -49,6 +49,7 @@ src:"real/purple-flower-real.jpg",
 type:"real",
 explanation:"Each of these flowers is unique in its coloring, petals, and size. There is also no strange smoothness as AI includes."
 },
+{
 src:"real/cheese-pull-real.jpg",
 type:"real",
 explanation:"The cheese pull is uneven, with the sides of the pizza falling off."
