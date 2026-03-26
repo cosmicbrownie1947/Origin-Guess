@@ -242,11 +242,28 @@ body.fade-out{
     opacity:0.9;
 }
 
+footer{
+    background:#222;      
+    color:white;            
+    text-align:center;
+    padding:20px;
+    margin-top:auto;        
+}
+
+/* spacing between lines */
+footer p{
+    margin:5px 0;
+}
+
+/* links inside footer */
 footer a{
-  color:#fff;
-  text-decoration:underline;
+    color:#ff5a5a;        
+    text-decoration:none;
+    margin:0 4px;
+    font-weight:500;
 }
 
 footer a:hover{
-  opacity:0.8;
+    text-decoration:underline;
+    opacity:0.85;
 }
