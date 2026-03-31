@@ -255,7 +255,22 @@ footer p{
     margin:5px 0;
 }
 
-/* links inside footer */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin-bottom: 25px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 footer a{
     color:#ff5a5a;        
     text-decoration:none;
