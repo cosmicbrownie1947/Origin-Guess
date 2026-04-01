@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learn Easy | Origin Guess</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.learn-card {
+  display: none;
+}
+</style>
+
 </head>
 
 <body>
@@ -19,89 +26,106 @@
 <div class="game-container">
   <h1>Easy Level</h1>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/kQPC4_DsJ8I" allowfullscreen></iframe>
-</div>
-
-<div class="quiz-container">
-  <img src="ai/snow-bunny-ai.jpg" alt="Snow Bunny">
-
-  <div class="quiz-buttons">
-    <button onclick="checkAnswer(this, false)">Real</button>
-    <button onclick="checkAnswer(this, true)">AI</button>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/kQPC4_DsJ8I" allowfullscreen></iframe>
   </div>
 
-  <div class="result"></div>
-  <div class="explanation">
-    This image was made by AI. It looks very soft and perfect, almost like a cartoon. Real photos usually have small flaws, but AI images can look too smooth and neat.
-  </div>
-</div>
+  <!-- QUESTION 1 -->
+  <div class="quiz-container">
+    <img src="ai/snow-bunny-ai.jpg" alt="Snow Bunny">
 
-<div class="learn-box">
-  <h2>How Can You Win?</h2>
-  <p> To get better at spotting AI images, start by looking closely! </p>
-  <ul>
-    <li>👀 Does anything look too perfect or too smooth?</li>
-    <li>🔍 Are there any strange or confusing details?</li>
-  </ul>
-  <p> AI images can look very neat, but real photos usually have small flaws. </p>
-</div>
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
 
-<div class="quiz-container">
-  <img src="ai/astronaut-water-ai.jpg" alt="Astronaut in Water">
+    <div class="result"></div>
 
-  <div class="quiz-buttons">
-    <button onclick="checkAnswer(this, false)">Real</button>
-    <button onclick="checkAnswer(this, true)">AI</button>
+    <div class="learn-card">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. It looks very soft and perfect, almost like a cartoon. Real photos usually have small flaws, but AI images can look too smooth and neat.
+      </p>
+    </div>
   </div>
 
-  <div class="result"></div>
-  <div class="explanation">
-    This image was made by AI. It may look real at first, but the water and movement don’t act the way they should in real life. AI sometimes has trouble making things follow real-world rules.
-  </div>
-</div>
-
-<div class="learn-box">
-  <h2>Keep Going!</h2>
-  <p> Now try asking yourself bigger questions: </p>
-  <ul>
-    <li>🌎 Does this scene make sense in real life?</li>
-    <li>🐬 Would this actually happen in nature?</li>
-  </ul>
-  <p> If something feels impossible or unusual, it might be made by AI! </p>
-</div>
-
-<div class="quiz-container">
-  <img src="ai/desert-dolphin-ai.jpg" alt="Desert Dolphin">
-
-  <div class="quiz-buttons">
-    <button onclick="checkAnswer(this, false)">Real</button>
-    <button onclick="checkAnswer(this, true)">AI</button>
+  <!-- LEARN BOX 1 -->
+  <div class="learn-box">
+    <h2>How Can You Win?</h2>
+    <p> To get better at spotting AI images, start by looking closely! </p>
+    <ul>
+      <li>👀 Does anything look too perfect or too smooth?</li>
+      <li>🔍 Are there any strange or confusing details?</li>
+    </ul>
+    <p> AI images can look very neat, but real photos usually have small flaws. </p>
   </div>
 
-  <div class="result"></div>
-  <div class="learn-card">
-    <h3>🔍 Explanation</h3>
-    <p>This image was made by AI. A dolphin would not be in the desert, so the scene doesn’t make sense. Asking “Does this seem possible?” is a great way to spot AI images.</p>
+  <!-- QUESTION 2 -->
+  <div class="quiz-container">
+    <img src="ai/astronaut-water-ai.jpg" alt="Astronaut in Water">
+
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
+
+    <div class="result"></div>
+
+    <div class="learn-card">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. It may look real at first, but the water and movement don’t act the way they should in real life. AI sometimes has trouble making things follow real-world rules.
+      </p>
+    </div>
   </div>
-  
 
-<div class="learn-box">
-  <h2>You’re Getting Good at This!</h2>
-  <p> Last tip—look at how things move and connect: </p>
-  <ul>
-    <li>💧 Do water, shadows, or movement look real?</li>
-    <li>🤔 Does anything feel a little “off”?</li>
-  </ul>
-  <p> The more you practice, the better you’ll get at spotting AI! </p>
-  <p class="resource-note">
-    Want to learn more? Check out the About page to see the sources and guides we used!
-  </p>
-</div>
+  <!-- LEARN BOX 2 -->
+  <div class="learn-box">
+    <h2>Keep Going!</h2>
+    <p> Now try asking yourself bigger questions: </p>
+    <ul>
+      <li>🌎 Does this scene make sense in real life?</li>
+      <li>🐬 Would this actually happen in nature?</li>
+    </ul>
+    <p> If something feels impossible or unusual, it might be made by AI! </p>
+  </div>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/Fvt-Wwl6SMU" allowfullscreen></iframe>
-</div>
+  <!-- QUESTION 3 -->
+  <div class="quiz-container">
+    <img src="ai/desert-dolphin-ai.jpg" alt="Desert Dolphin">
+
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
+
+    <div class="result"></div>
+
+    <div class="learn-card">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. A dolphin would not be in the desert, so the scene doesn’t make sense. Asking “Does this seem possible?” is a great way to spot AI images.
+      </p>
+    </div>
+  </div>
+
+  <!-- LEARN BOX 3 -->
+  <div class="learn-box">
+    <h2>You’re Getting Good at This!</h2>
+    <p> Last tip—look at how things move and connect: </p>
+    <ul>
+      <li>💧 Do water, shadows, or movement look real?</li>
+      <li>🤔 Does anything feel a little “off”?</li>
+    </ul>
+    <p> The more you practice, the better you’ll get at spotting AI! </p>
+    <p class="resource-note">
+      Want to learn more? Check out the About page to see the sources and guides we used!
+    </p>
+  </div>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/Fvt-Wwl6SMU" allowfullscreen></iframe>
+  </div>
 
   <div class="buttons">
     <a href="learn-medium.html" class="btn">Go to Medium</a>
