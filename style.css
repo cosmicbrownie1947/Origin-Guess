@@ -109,6 +109,46 @@ body.fade-out{
     border-radius:2px;
 }
 
+.quiz-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.quiz-container img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.quiz-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.quiz-buttons button:hover {
+  background-color: #555;
+}
+
+.result {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.explanation {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .tagline{
     margin-top:25px;
     font-size:20px;
