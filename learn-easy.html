@@ -102,5 +102,20 @@
   </p>
 </footer>
 
+<script>
+function checkAnswer(button, isCorrectAnswer) {
+  const container = button.closest('.quiz-container');
+  const result = container.querySelector('.result');
+
+  if (isCorrectAnswer) {
+    result.textContent = "Correct!";
+    result.style.color = "green";
+  } else {
+    result.textContent = "Incorrect";
+    result.style.color = "red";
+  }
+}
+</script>
+
 </body>
 </html>
