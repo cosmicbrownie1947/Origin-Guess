@@ -18,6 +18,10 @@ body.fade-out{
     transition:0.4s ease;
 }
 
+.learn-card {
+  display: none;
+}
+
 .fade-in{
     opacity:1;
     animation:fadeIn 0.6s ease-in;
