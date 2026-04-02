@@ -14,20 +14,16 @@
 
 <div class="container" id="main-container">
 
-    <!-- Logo -->
     <div class="logo-box">
         <img src="LOGO.jpg" alt="Origin Guess Logo">
     </div>
 
-    <!-- Tagline -->
     <p class="tagline">
     10 rounds. AI or Real.<br>
     Can you spot the OG?
     </p>
 
-    <div class="divider"></div>
     
-    <!-- Main Buttons -->
     <div class="buttons" id="main-buttons">
 
         <button id="play-btn" class="btn play">PLAY NOW</button>
@@ -82,7 +78,6 @@ const backBtn = document.getElementById("back-btn");
 const mainButtons = document.getElementById("main-buttons");
 const difficultyMenu = document.getElementById("difficulty-menu");
 
-// PLAY NOW CLICK
 playBtn.addEventListener("click", () => {
 
 mainButtons.classList.add("fade-out");
@@ -98,7 +93,6 @@ difficultyMenu.classList.add("fade-in");
 
 });
 
-// BACK BUTTON CLICK
 backBtn.addEventListener("click", () => {
 
 difficultyMenu.classList.add("fade-out");
