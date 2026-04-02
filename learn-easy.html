@@ -144,7 +144,7 @@
 function checkAnswer(button, isCorrectAnswer) {
   const container = button.closest('.quiz-container');
   const result = container.querySelector('.result');
-  const card = container.querySelector('.learn-card');
+  const card = container.querySelector('.quiz-explanation');
 
   if (isCorrectAnswer) {
     result.textContent = "Correct!";
