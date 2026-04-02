@@ -3,87 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>About | Origin Guess</title>
-
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #dcdcdc;
-      margin: 0;
-      color: #333;
-    }
-
-    /* HEADER */
-    .header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .home-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 28px;
-      text-decoration: none;
-      color: #ff5a5a;
-    }
-
-    .logo {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      height: 50px;
-    }
-
-    /* MAIN CONTENT */
-    .container {
-      max-width: 800px;
-      margin: 120px auto 60px;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section {
-      background-color: #7d9487;
-      color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .section h2 {
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="fade-in">
 
-<div class="header">
-  <a href="index.html">
-    <img src="images/home.png" alt="Home" class="home-icon">
-  </a>
+  <div class="game-header">
+    <a href="index.html">
+      <img src="images/home.png" alt="Home" class="home-btn">
+    </a>
 
-  <img src="images/logo.png" alt="Origin Guess Logo" class="logo">
-</div>
-  
-  <!-- CONTENT -->
+    <img src="images/LOGO.jpg" alt="Origin Guess Logo" class="header-logo">
+  </div>
+
+  <!-- MAIN CONTENT -->
   <div class="container">
 
-    <h1>About Origin Guess!</h1>
+    <div class="level-header">
+      <h1>About Origin Guess!</h1>
+      <div class="divider"></div>
+    </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>What is Origin Guess!?</h2>
       <p>
         Origin Guess! is an interactive web-based game designed to teach people about AI by testing them on whether an image or text presented is AI or real.
@@ -92,7 +33,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>The Goal</h2>
       <p>
         The goal of Origin Guess! is to build up a generation that can detect AI and avoid it when they choose to.
@@ -101,7 +42,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>Target Audience</h2>
       <p>
         Origin Guess! is primarily targeted to students and everyday internet users who want to better understand AI.
@@ -110,7 +51,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>What Makes Origin Guess! Different?</h2>
       <p>
         Origin Guess! is designed to be accessible, engaging, and easy to understand.
@@ -123,7 +64,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>Why Origin Guess!?</h2>
       <p>
         Origin Guess! was created after Nichole grew frustrated with her grandfather frequently sending AI-generated images and talking about how “cool” and “stunning” they were.
@@ -131,7 +72,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>Privacy Policy</h2>
       <p>
         Origin Guess! values user privacy and safety. We do not collect personal data beyond optional usernames used for gameplay features such as leaderboards.
@@ -142,7 +83,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="about-section">
       <h2>References</h2>
       <p>
         References and sources will be added here in a future update.
