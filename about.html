@@ -3,52 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>About | Origin Guess</title>
-  <link rel="stylesheet" href="style.css">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f172a;
-      color: white;
+      background-color: #dcdcdc;
       margin: 0;
+      color: #333;
     }
 
     /* HEADER */
     .header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
+      padding: 20px;
       box-sizing: border-box;
-      z-index: 1000;
+    }
+
+    .home-icon {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 28px;
+      text-decoration: none;
+      color: #ff5a5a;
     }
 
     .logo {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .home-btn {
-      text-decoration: none;
-      color: white;
-      border: 1px solid white;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: 0.2s;
-    }
-
-    .home-btn:hover {
-      background-color: white;
-      color: #0f172a;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      height: 50px;
     }
 
     /* MAIN CONTENT */
     .container {
-      max-width: 900px;
+      max-width: 800px;
       margin: 120px auto 60px;
       padding: 20px;
     }
@@ -59,15 +50,16 @@
     }
 
     .section {
-      margin-bottom: 35px;
+      background-color: #7d9487;
+      color: white;
       padding: 20px;
-      background-color: #1e293b;
-      border-radius: 12px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .section h2 {
       margin-bottom: 10px;
-      color: #38bdf8;
     }
 
     .section p {
@@ -78,13 +70,15 @@
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="logo">Origin Guess!</div>
-    <a href="index.html" class="home-btn">Home</a>
-  </div>
+<div class="header">
+  <a href="index.html">
+    <img src="images/home.png" alt="Home" class="home-icon">
+  </a>
 
-  <!-- MAIN -->
+  <img src="images/logo.png" alt="Origin Guess Logo" class="logo">
+</div>
+  
+  <!-- CONTENT -->
   <div class="container">
 
     <h1>About Origin Guess!</h1>
