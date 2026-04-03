@@ -16,29 +16,113 @@
   <img src="LOGO.jpg" class="header-logo">
 </header>
 
+<div class="level-header">
+  <h1>Learn AI: Hard!</h1>
+  <div class="divider"></div>
+</div>
+
 <div class="game-container">
-  <h1>Hard Level</h1>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/SVcsDDABEkM" allowfullscreen></iframe>
-</div>
-
-  <div class="learn-card">
-    <h3>🎯 Expert Challenge Coming Soon</h3>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/SVcsDDABEkM" allowfullscreen></iframe>
   </div>
 
-  <div class="learn-card">
-    <h3>🔍 Deep Analysis Coming Soon</h3>
+  <div class="quiz-container">
+    <img src="ai/mail-man-ai.jpg" alt="Mail Delivery">
+
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
+
+    <div class="result"></div>
+
+    <div class="quiz-explanation">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. It looks very realistic, but small details like the hands, edges of objects, and textures can look slightly unnatural. AI often struggles with fine details when objects interact closely.
+      </p>
+    </div>
   </div>
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/T7Rv4tGRlfc" allowfullscreen></iframe>
-</div>
+  <div class="learn-box">
+    <h2>Now It Gets Tricky</h2>
+    <p> At this level, AI images can look almost real. You need to focus on small details. </p>
+    <ul>
+      <li>✋ Do hands or objects look slightly off?</li>
+      <li>📦 Do items interact naturally with each other?</li>
+    </ul>
+    <p> AI can struggle when objects touch or overlap in realistic ways. </p>
+  </div>
+
+  <div class="quiz-container">
+    <img src="ai/night-mountain-ai.jpg" alt="Night Mountain">
+
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
+
+    <div class="result"></div>
+
+    <div class="quiz-explanation">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. The lighting looks dramatic and realistic, but the stars and landscape lighting don’t fully match. AI can create beautiful scenes, but lighting sources don’t always behave correctly.
+      </p>
+    </div>
+  </div>
+
+  <div class="learn-box">
+    <h2>Follow the Light</h2>
+    <p> Lighting is one of the hardest things for AI to get right. </p>
+    <ul>
+      <li>💡 Where is the light coming from?</li>
+      <li>🌌 Do shadows and highlights match that light?</li>
+    </ul>
+    <p> If the lighting feels dramatic but confusing, it may be AI-generated. </p>
+  </div>
+
+  <div class="quiz-container">
+    <img src="ai/snow-crow-ai.jpg" alt="Crow in Snow">
+
+    <div class="quiz-buttons">
+      <button onclick="checkAnswer(this, false)">Real</button>
+      <button onclick="checkAnswer(this, true)">AI</button>
+    </div>
+
+    <div class="result"></div>
+
+    <div class="quiz-explanation">
+      <h3>🔍 Explanation</h3>
+      <p>
+        This image was made by AI. It looks very believable, but textures like feathers, snow, and background blur can feel slightly too smooth or inconsistent. AI often blends textures in subtle ways that don’t match real photography.
+      </p>
+    </div>
+  </div>
+
+  <div class="learn-box">
+    <h2>You’re an Expert Now</h2>
+    <p> At this level, trust your instincts and look for tiny inconsistencies. </p>
+    <ul>
+      <li>🪶 Do textures look natural up close?</li>
+      <li>🌫 Do background and subject match in detail?</li>
+    </ul>
+    <p> AI images can be very convincing, but small details often reveal the truth. </p>
+    <p class="resource-note">
+      Want to learn more? Check out the About page to see the sources and guides we used!
+    </p>
+  </div>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/T7Rv4tGRlfc" allowfullscreen></iframe>
+  </div>
 
   <div class="buttons">
     <a href="game.html" class="btn">Play Game</a>
     <a href="learn.html" class="btn">Back</a>
   </div>
+
 </div>
 
 <footer>
@@ -51,6 +135,27 @@
     <a href="privacy.html">Privacy Policy</a>
   </p>
 </footer>
+
+<script>
+function checkAnswer(button, isCorrectAnswer) {
+  const container = button.closest('.quiz-container');
+  const result = container.querySelector('.result');
+  const card = container.querySelector('.quiz-explanation');
+
+  if (isCorrectAnswer) {
+    result.textContent = "Correct!";
+    result.style.color = "green";
+  } else {
+    result.textContent = "Incorrect";
+    result.style.color = "red";
+  }
+
+  card.style.display = "block";
+}
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
